@@ -1,0 +1,29 @@
+.LABEL {
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 10pt;
+    COLOR: #ce6500;
+    FONT-FAMILY: arial
+}
+
+.rowOn {
+    BACKGROUND-COLOR: #dddddd;
+}
+
+.rowOff {
+    BACKGROUND-COLOR: #ffffff;
+}
+
+.text {
+    FONT-SIZE: 9pt;
+    FONT-FAMILY: Arial
+}
+
+.textbold {
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 9pt;
+    FONT-FAMILY: Arial
+}
+
+.titlebar {
+    BACKGROUND-COLOR: #336699
+}
