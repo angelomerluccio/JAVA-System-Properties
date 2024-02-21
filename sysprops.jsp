@@ -8,9 +8,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="/css/style.css">
-
-	<title>Java - System Properties</title>
-
+	<title>Java - Environmental Variables & System Properties</title>
 
 </head>
 
@@ -27,7 +25,9 @@
 		Map.Entry entry = (Map.Entry)i.next();
 		String key = (String)entry.getKey();
 		String value = (String)entry.getValue();
-		%><tr class="<%= css ? "rowOn" : "rowOff " %>"><td class="text"><%= key %></td><td class="text"><%= value %></td></tr><%
+		%><tr class="<%= css ? "rowOn" : "rowOff " %>">
+			<td class="text"><%= key %></td><td class="text"><%= value %></td>
+		</tr><%
 		css = !css;
 	}
 %>
