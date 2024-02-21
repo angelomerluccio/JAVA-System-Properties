@@ -19,16 +19,23 @@
 		<td class="LABEL">Property</td>
 	</tr>
 <%
+	/**
+	  * Purpose of this jsp is to display helpful java enviromental varialbles.
+	  * Results may vary depending on your JVM container. (i.e, Tomcat, JBOSS)
+	  * 
+	 */
 	TreeMap props = new TreeMap(System.getProperties());
 	boolean css = false;
 	for (Iterator i = props.entrySet().iterator(); i.hasNext(); ) {
 		Map.Entry entry = (Map.Entry)i.next();
 		String key = (String)entry.getKey();
 		String value = (String)entry.getValue();
-		%><tr class="<%= css ? "rowOn" : "rowOff " %>">
-			<td class="text"><%= key %></td><td class="text"><%= value %></td>
-		</tr><%
-		css = !css;
+%>
+	<tr class="<%= css ? "rowOn" : "rowOff " %>">
+			<td class="text"><%= key %></td>
+			<td class="text"><%= value %></td>
+		</tr>
+<% css = !css;
 	}
 %>
 </table>
