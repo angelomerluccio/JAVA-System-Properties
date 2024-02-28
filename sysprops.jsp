@@ -41,7 +41,7 @@
 		</div>
 
 		<% 
-			TreeMap props=new TreeMap(System. getProperties()); 
+			TreeMap props=new TreeMap(System.getProperties()); 
 			boolean css=false; 
 			for (Iterator i=props.entrySet().iterator(); i.hasNext(); ) { 
 				Map.Entry entry=(Map.Entry) i.next (); 
@@ -50,14 +50,10 @@
 		%>
 			<div class="form-row">
 				<div class="col-md-6">
-					<div class="alert alert-info">
-						<%= key %>
-					</div>
+					<div class="alert alert-info"><%= key %></div>
 				</div>
 				<div class="col-md-6">
-					<div class="alert alert-info">
-						<%= value %>
-					</div>
+					<div class="alert alert-info"><%= value %></div>
 				</div>
 			</div>
 			<% 
