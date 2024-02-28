@@ -1,29 +1,71 @@
-.LABEL {
-    FONT-WEIGHT: bold;
-    FONT-SIZE: 10pt;
-    COLOR: #ce6500;
-    FONT-FAMILY: arial
+body {
+    font-family: Arial;
 }
 
-.rowOn {
-    BACKGROUND-COLOR: #dddddd;
+a.levell {
+    color: #ffffff;
+    font-size: 11pt;
 }
 
-.rowOff {
-    BACKGROUND-COLOR: #ffffff;
+/** override popper css **/
+.tooltip-inner {
+    text-align: left;
 }
 
-.text {
-    FONT-SIZE: 9pt;
-    FONT-FAMILY: Arial
+/** override bootsrap css */
+.alert-success {
+    background-color: #646464;
+    color: #ffffff;
+    border: Opx;
 }
 
-.textbold {
-    FONT-WEIGHT: bold;
-    FONT-SIZE: 9pt;
-    FONT-FAMILY: Arial
+.alert-info {
+    background-color: #dad8d8;
+    color: #000000;
+    border: Opx;
 }
 
-.titlebar {
-    BACKGROUND-COLOR: #336699
+.alert-danger {
+    background-color: #9a3d37;
+    color: #ffffff;
+    border: Opx;
+}
+
+.alert-warning {
+    background-color: #f1e4ba;
+    color: #000000;
+    border: Opx;
+}
+
+.alert-notice {
+    background-color: #bbb3ac;
+    color: #000000;
+    border: Opx;
+}
+
+.btn-secondary {
+    background-color: #bbb3ac;
+    color: #000000;
+    border: Opx;
+}
+
+.data-info {
+    background-color: #f5f5f5;
+    border: Opx;
+    height: 100%;
+}
+
+.data-options {
+    background-color: #f5f5f5;
+    border: Opx;
+}
+
+.header {
+    position: relative;
+}
+
+.print {
+    position: absolute;
+    top: -15px;
+    width: 100%;
 }
