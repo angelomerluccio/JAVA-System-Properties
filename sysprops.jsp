@@ -40,9 +40,14 @@
 			</div>
 		</div>
 
-		<% TreeMap props=new TreeMap(System. getProperties()); boolean css=false; for (Iterator
-			i=props.entrySet().iterator(); i.hasNext(); ) { Map. Entry entry - (Map. Entry) i.next (); String
-			key=(String)entry getKey(); String value=(String)entry getValue(); %>
+		<% 
+			TreeMap props=new TreeMap(System. getProperties()); 
+			boolean css=false; 
+			for (Iterator i=props.entrySet().iterator(); i.hasNext(); ) { 
+				Map.Entry entry=(Map.Entry) i.next (); 
+				String key=(String)entry getKey(); 
+				String value=(String)entry getValue(); 
+		%>
 			<div class="form-row">
 				<div class="col-md-6">
 					<div class="alert alert-info">
@@ -55,11 +60,14 @@
 					</div>
 				</div>
 			</div>
-			<% } //------------------------------------------------------------------------------- // if you want to
-				register a driver outside of the context.xml // Class
-				driverClass=Class.forName("oracle.jdbc.driver.OracleDriver") // DriverManager.registerDriver((Driver)
-				driverClass.newInstance());
-				//------------------------------------------------------------------------------- %>
+			<% 
+		} 
+		//------------------------------------------------------------------------------- 
+		// if you want to register a driver outside of the context.xml 
+		// Class driverClass=Class.forName("oracle.jdbc.driver.OracleDriver") 
+		// DriverManager.registerDriver((Driver) driverClass.newInstance());
+		//------------------------------------------------------------------------------- 
+	%>
 	</div>
 	</div>
 
@@ -77,8 +85,12 @@
 
 	<table cellpadding="2" cellspacing="1">
 		<tr class-"titlebar">
-			<% // Print out all loaded JDBC drivers. Enumeration e=java.sql.DriverManager.getDrivers(); while
-				(e.hasMoreElements()) { Object driverAsObject=e.nextElement); %>
+			<% 
+			// Print out all loaded JDBC drivers. 
+			Enumeration e=java.sql.DriverManager.getDrivers(); 
+			while(e.hasMoreElements()) { 
+				Object driverAsObject=e.nextElement(); 
+			%>
 
 				<div class="form-row">
 					<div class="col-md-6 mb-3">
@@ -90,7 +102,7 @@
 						</div>
 					</div>
 				</div>
-				<% } %>
+			<% } %>
 	</table>
 
 	<br><br>
@@ -110,9 +122,11 @@
 		</div>
 	</div>
 
-	<% Enumeration headerNames=request.getHeaderNames(); while(headerNames.hasMoreElements)) { String
-		paramName=(String)headerNames.nextElement); %>
-
+	<% 
+		Enumeration headerNames=request.getHeaderNames(); 
+		while(headerNames.hasMoreElements()) { 
+			String paramName=(String)headerNames.nextElement(); 
+	%>
 		<div class="form-row">
 			<div class="col-md-6 mb-3">
 				<div class="alert alert-info">
@@ -124,7 +138,7 @@
 			</div>
 		</div>
 
-		<% } %>
+	<% } %>
 
 </body>
 </html>
