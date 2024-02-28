@@ -1,3 +1,5 @@
+<%@ page contentType="text/html; charset-UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="java.io.* java.util.*" %>
 <%@ page import="java.util.Iterator" %>
 <%@ page import="java.util.Map" %>
 <%@ page import="java.util.Properties" %>
@@ -15,35 +17,114 @@
 
 	<link rel="stylesheet" href="/css/style.css">
 	<title>Java - Application Container | Environmental Variables | System Properties</title>
-
 </head>
 
-<body>
-<table cellpadding="2" cellspacing="1">
-	<tr class="titlebar">
-		<td class="LABEL">Name</td>
-		<td class="LABEL">Property</td>
-	</tr>
-<%
-	/**
-	  * Purpose of this jsp is to display helpful java enviromental varialbles.
-	  * Results may vary depending on your JVM container. (i.e, Tomcat, JBOSS)
-	  * 
-	 */
-	TreeMap props = new TreeMap(System.getProperties());
-	boolean css = false;
-	for (Iterator i = props.entrySet().iterator(); i.hasNext(); ) {
-		Map.Entry entry = (Map.Entry)i.next();
-		String key = (String)entry.getKey();
-		String value = (String)entry.getValue();
-%>
-	<tr class="<%= css ? "rowOn" : "rowOff " %>">
-			<td class="text"><%= key %></td>
-			<td class="text"><%= value %></td>
-		</tr>
-<% css = !css;
-	}
-%>
-</table>
+<body style="padding:25px" bgcolor="#FFFFFF">
+
+	<div id="header" class="header" style="position:relative; margin:O auto; visibility:visible">
+
+		<div class="form-row">
+			<div class="col-md-12">
+				<div class="alert alert-warning">
+					<strong>Java / JVM - Application Container - System Properties</strong>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-row">
+			<div class="col-md-6">
+				<div class="alert alert-success">Name</div>
+			</div>
+			<div class="col-md-6">
+				<div class="alert alert-success">Property</div>
+			</div>
+		</div>
+
+		<% TreeMap props=new TreeMap(System. getProperties()); boolean css=false; for (Iterator
+			i=props.entrySet().iterator(); i.hasNext(); ) { Map. Entry entry - (Map. Entry) i.next (); String
+			key=(String)entry getKey(); String value=(String)entry getValue(); %>
+			<div class="form-row">
+				<div class="col-md-6">
+					<div class="alert alert-info">
+						<%= key %>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="alert alert-info">
+						<%= value %>
+					</div>
+				</div>
+			</div>
+			<% } //------------------------------------------------------------------------------- // if you want to
+				register a driver outside of the context.xml // Class
+				driverClass=Class.forName("oracle.jdbc.driver.OracleDriver") // DriverManager.registerDriver((Driver)
+				driverClass.newInstance());
+				//------------------------------------------------------------------------------- %>
+	</div>
+	</div>
+
+	<br /><br />
+
+	<div class="form-row">
+		<div class="col-md-12">
+			<div class="alert alert-warning">
+				<strong>JDBC Drivers</strong>
+			</div>
+		</div>
+	</div>
+
+
+
+	<table cellpadding="2" cellspacing="1">
+		<tr class-"titlebar">
+			<% // Print out all loaded JDBC drivers. Enumeration e=java.sql.DriverManager.getDrivers(); while
+				(e.hasMoreElements()) { Object driverAsObject=e.nextElement); %>
+
+				<div class="form-row">
+					<div class="col-md-6 mb-3">
+						<div class="alert alert-info">JDBC Driver</div>
+					</div>
+					<div class="col-md-6 mb-3">
+						<div class="alert alert-info">
+							<%= driverAsObject %>
+						</div>
+					</div>
+				</div>
+				<% } %>
+	</table>
+
+	<br><br>
+	<div class="form-row">
+		<div class="col-md-12">
+			<div class-"alert alert-warning"><strong>HTTP Headers</strong></div>
+		</div>
+	</div>
+
+
+	<div class="form-row">
+		<div class="col-md-6">
+			<div class="alert alert-success">Header Name</div>
+		</div>
+		<div class="col-md-6">
+			<div class="alert alert-success">Header Value(s)</div>
+		</div>
+	</div>
+
+	<% Enumeration headerNames=request.getHeaderNames(); while(headerNames.hasMoreElements)) { String
+		paramName=(String)headerNames.nextElement); %>
+
+		<div class="form-row">
+			<div class="col-md-6 mb-3">
+				<div class="alert alert-info">
+					<%= paramName %>
+				</div>
+			</div>
+			<div class="col-md-6 mb-3">
+				<div class="alert alert-info" <%=request.getHeader(paramName) %></div>
+			</div>
+		</div>
+
+		<% } %>
+
 </body>
 </html>
