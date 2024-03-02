@@ -1,9 +1,13 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+pageEncoding="ISO-8859-1"%>
+
 <%@ page import="java.io.*" %>
 <%@ page import="java.util.Iterator" %>
 <%@ page import="java.util.Map" %>
 <%@ page import="java.util.Properties" %>
 <%@ page import="java.util.TreeMap" %>
+<%@ page import="java.util.Enumeration" %>
+
 
 <html>
 <head>
@@ -44,9 +48,9 @@
 			TreeMap props=new TreeMap(System.getProperties()); 
 			boolean css=false; 
 			for (Iterator i=props.entrySet().iterator(); i.hasNext(); ) { 
-				Map.Entry entry=(Map.Entry) i.next (); 
-				String key=(String)entry getKey(); 
-				String value=(String)entry getValue(); 
+				Map.Entry entry=(Map.Entry)i.next (); 
+				String key=(String)entry.getKey(); 
+				String value=(String)entry.getValue(); 
 		%>
 			<div class="form-row">
 				<div class="col-md-6">
@@ -125,12 +129,10 @@
 	%>
 		<div class="form-row">
 			<div class="col-md-6 mb-3">
-				<div class="alert alert-info">
-					<%= paramName %>
-				</div>
+				<div class="alert alert-info"><%= paramName %></div>
 			</div>
 			<div class="col-md-6 mb-3">
-				<div class="alert alert-info" <%=request.getHeader(paramName) %></div>
+				<div class="alert alert-info"><%=request.getHeader(paramName) %></div>
 			</div>
 		</div>
 
